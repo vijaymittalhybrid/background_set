@@ -4,13 +4,71 @@
     <title></title>
     <meta charset="utf-8" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="project/style.css" rel="stylesheet"/>
 
-    <script src="cordova.js"></script>
-    <script src="kendo/js/jquery.min.js"></script>
-    <script src="kendo/js/kendo.mobile.min.js"></script>
+    
     
 </head>
 <body>
     
+    <!--Login-->
+    <div data-role="view" id="login" data-model="app.loginService.viewModel" data-show="app.loginService.viewModel.show">
+        <h2>User Login</h2>
+        <div class="mainDv" data-bind="events:{keyup:checkEnter}">
+            <p>
+                <input type="text" name="uname" class="txtbox" data-bind="value:uname" placeholder="Username"/>
+            </p>
+            <p>
+                <input type="password" name="pwd" class="txtbox" data-bind="value:pwd" placeholder="Password"/>
+            </p>
+            <p>
+                <a data-role="button" class="btn" data-bind="click:inputstatus">Submit</a>
+            </p>
+        </div>
+        <div class="mainDv2">
+            <p>
+                <a href="#register">New User Register</a>
+            </p>
+        </div>
+    </div>
+    
+    <!--register-->
+    <div data-role="view" id="register" data-model="app.signupService.viewModel" data-show="app.signupService.viewModel.show">
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" data-align="left">Back</a>
+                <span class="txtSpan">New User Register</span>
+            </div>
+        </div>
+        
+        <div data-role="content" >
+            <div class="mainDv" data-bind="events:{keyup:checkREnter}">
+                <p>
+                    <input type="text" name="user_name" data-bind="value:user_name" placeholder="Username" class="txtbox"/> 
+                </p>
+                <p>
+                    <input type="password" name="user_pwd" data-bind="value:user_pwd" placeholder="Password" class="txtbox"/>  
+                </p>
+                <p>
+                    <input type="email" name="user_mail" data-bind="value:user_mail" placeholder="Email" class="txtbox"/>  
+                </p>
+                <p>
+                    <input type="text" name="name" data-bind="value:name" placeholder="Your Name" class="txtbox"/>  
+                </p>
+                <p>
+                    <a data-role="button" class="btn" data-bind="click:registerField">Submit</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!--Scirpt-->
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="project/script/lib/everlive.all.min.js"></script>
+    <script src="project/script/app.js"></script>
+    <script src="project/script/login.js"></script>
+    <script src="project/script/signup.js"></script>
 </body>
 </html>
